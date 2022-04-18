@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/iwordle/static/css/main.e6c13ad2.css",
-    "main.js": "/iwordle/static/js/main.58849423.js",
-    "static/js/787.b48256c9.chunk.js": "/iwordle/static/js/787.b48256c9.chunk.js",
-    "index.html": "/iwordle/index.html",
-    "main.e6c13ad2.css.map": "/iwordle/static/css/main.e6c13ad2.css.map",
-    "main.58849423.js.map": "/iwordle/static/js/main.58849423.js.map",
-    "787.b48256c9.chunk.js.map": "/iwordle/static/js/787.b48256c9.chunk.js.map"
+    "main.css": "/TextEdit/static/css/main.e6c13ad2.css",
+    "main.js": "/TextEdit/static/js/main.8eefa5d5.js",
+    "static/js/787.b48256c9.chunk.js": "/TextEdit/static/js/787.b48256c9.chunk.js",
+    "index.html": "/TextEdit/index.html",
+    "main.e6c13ad2.css.map": "/TextEdit/static/css/main.e6c13ad2.css.map",
+    "main.8eefa5d5.js.map": "/TextEdit/static/js/main.8eefa5d5.js.map",
+    "787.b48256c9.chunk.js.map": "/TextEdit/static/js/787.b48256c9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.58849423.js"
+    "static/js/main.8eefa5d5.js"
   ]
 }
