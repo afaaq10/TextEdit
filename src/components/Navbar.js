@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-function Navbar() {
+function Navbar(props) {
 
 
 
@@ -13,15 +13,22 @@ function Navbar() {
 
     const upper = () => {
         setText(text.toUpperCase())
+        props.showAlert('Converted to uppercase', 'success')
+        setTimeout(() => {
+            props.setAlert(null)
+        }, 1500);
     }
     const copyText = () => {
-      let ctext=  document.getElementById("textarea")
-      ctext.select();
+        let ctext = document.getElementById("textarea")
+        ctext.select();
 
 
-  
-  navigator.clipboard.writeText(ctext.value);
 
+        navigator.clipboard.writeText(ctext.value);
+        props.showAlert(' Text Copied to clipboard', 'success')
+        setTimeout(() => {
+            props.setAlert(null)
+        }, 1500);
 
 
     }
@@ -43,7 +50,7 @@ function Navbar() {
 
 
     }
-   
+
 
 
 
@@ -94,9 +101,9 @@ function Navbar() {
                     <button class="btn btn-primary btn-sm dropdown-toggle mt-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Choose textcolor
                         </button>
-                        <button class="btn btn-primary btn-sm mx-2 mt-2" type="button" onClick={copyText}>
+                    <button class="btn btn-primary btn-sm mx-2 mt-2" type="button" onClick={copyText}>
                         Copy text
-                        </button>  
+                        </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" onClick={changeColor1} href="#">Pink</a></li>
                         <li><a class="dropdown-item" onClick={changeColor2} href="#">Red</a></li>
@@ -115,8 +122,8 @@ function Navbar() {
 
 
 
-               <p className="fs-4"> Total characters: {text.length}</p> 
-               <p className="fs-4"> Total Words {text.split(" ")[0] == 0 ? 0 : text.split(" ").length}</p>
+                <p className="fs-4"> Total characters: {text.length}</p>
+                <p className="fs-4"> Total Words {text.split(" ")[0] == 0 ? 0 : text.split(" ").length}</p>
 
                 {/* <p  id="para"> Wordcount: {text.split(" ").length}</p>
         document */}
