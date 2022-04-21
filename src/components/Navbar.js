@@ -1,55 +1,58 @@
 import React from 'react'
-import { useState } from 'react'
+// import { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
 function Navbar(props) {
 
+    // useEffect(() => {
+    //     document.getElementById('textarea').focus();
+    // }, [])
+
+    // const [text, setText] = useState("")
 
 
-    const [text, setText] = useState("")
+    // const handleChange = (e) => {
+    //     setText(e.target.value)
+    // }
 
-
-    const handleChange = (e) => {
-        setText(e.target.value)
-    }
-
-    const upper = () => {
-        setText(text.toUpperCase())
-        props.showAlert('Converted to uppercase', 'success')
-        setTimeout(() => {
-            props.setAlert(null)
-        }, 1500);
-    }
-    const copyText = () => {
-        let ctext = document.getElementById("textarea")
-        ctext.select();
-
-
-
-        navigator.clipboard.writeText(ctext.value);
-        props.showAlert(' Text Copied to clipboard', 'success')
-        setTimeout(() => {
-            props.setAlert(null)
-        }, 1500);
-
-
-    }
-    const changeColor1 = () => {
-        document.getElementById("textarea").style.color = "pink";
-
-    }
-    const changeColor2 = () => {
-        document.getElementById("textarea").style.color = "red";
-
-    }
-    const changeColor3 = () => {
-        document.getElementById("textarea").style.color = "orange";
-
-    }
-    const changeColor4 = () => {
-        document.getElementById("textarea").style.color = "green";
+    // const upper = () => {
+    //     setText(text.toUpperCase())
+    //     props.showAlert('Converted to uppercase', 'success')
+    //     setTimeout(() => {
+    //         props.setAlert(null)
+    //     }, 1500);
+    // }
+    // const copyText = () => {
+    //     let ctext = document.getElementById("textarea")
+    //     ctext.select();
 
 
 
-    }
+    //     navigator.clipboard.writeText(ctext.value);
+    //     props.showAlert(' Text Copied to clipboard', 'success')
+    //     setTimeout(() => {
+    //         props.setAlert(null)
+    //     }, 1500);
+
+
+    // }
+    // const changeColor1 = () => {
+    //     document.getElementById("textarea").style.color = "pink";
+
+    // }
+    // const changeColor2 = () => {
+    //     document.getElementById("textarea").style.color = "red";
+
+    // }
+    // const changeColor3 = () => {
+    //     document.getElementById("textarea").style.color = "orange";
+
+    // }
+    // const changeColor4 = () => {
+    //     document.getElementById("textarea").style.color = "green";
+
+
+
+    // }
 
 
 
@@ -62,14 +65,24 @@ function Navbar(props) {
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-3">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">iEditor</a>
+                    <Link class="navbar-brand" to="#">iEditor</Link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <li class="nav-item ">
+
+                                <Link class="nav-link link-secondary" aria-current="page" to="/">Home</Link>
+
+                            </li>
+                            <li class="nav-item ">
+                                <Link class="nav-link " aria-current="page" to="/about">About</Link>
+
+                            </li>
+                            <li class="nav-item ">
+                                <Link class="nav-link " aria-current="page" to="/contact">Contact</Link>
+
                             </li>
 
 
@@ -85,9 +98,9 @@ function Navbar(props) {
             </nav>
 
 
-            <div className="container mx-auto ">
+            {/* <div className="container mx-auto ">
                 <div class="form-floating mt-5">
-                    <h1>Edit your text here</h1>
+                    <h1>Add/Edit your text here</h1>
 
                     <textarea class="form-control" onChange={handleChange} value={text} placeholder="Leave a comment here" id="textarea" style={{ height: "100px" }} ></textarea>
 
@@ -121,21 +134,21 @@ function Navbar(props) {
                 <textarea class="form-control" onChange={handleChange} value={text} placeholder="nothing to preview" style={{ border: "none" }} ></textarea>
 
 
-
+                <p className="fs-4">Average reading time : {0.004 * text.length} mins </p>
                 <p className="fs-4"> Total characters: {text.length}</p>
-                <p className="fs-4"> Total Words {text.split(" ")[0] == 0 ? 0 : text.split(" ").length}</p>
+                <p className="fs-4"> Total Words {text.split(" ").filter((el) => { return el != 0 }).length}</p> */}
 
-                {/* <p  id="para"> Wordcount: {text.split(" ").length}</p>
+            {/* <p  id="para"> Wordcount: {text.split(" ").length}</p>
         document */}
 
 
 
-            </div>
-
-
-
-
         </div>
+
+
+
+
+
     )
 }
 
