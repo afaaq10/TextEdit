@@ -159,7 +159,7 @@ function Home(props) {
 
             <div className="container mx-auto ">
                 <div class="form-floating mt-5">
-                    <h1 className="text-white">Add/Edit your text here</h1>
+                    <h1 className="text-dark">Add/Edit your text here</h1>
 
                     <textarea class="form-control" onChange={handleChange} value={text} placeholder="Leave a comment here" id="textarea" style={{ height: "100px" }} ></textarea>
 
@@ -187,7 +187,7 @@ function Home(props) {
 
 
 
-            <div className="container mt-3 text-white">
+            <div className="container mt-3 text-dark">
                 <h1>Preview</h1>
 
                 <textarea class="form-control" onChange={handleChange} value={text} placeholder="nothing to preview" style={{ border: "none" }} ></textarea>
