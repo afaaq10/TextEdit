@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function About() {
 
-    document.body.style.backgroundColor = "#02171c"
+
 
 
     return (
